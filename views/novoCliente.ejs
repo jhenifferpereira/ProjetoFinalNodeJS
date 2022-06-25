@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>Cadastro de Clientes</title>
+</head>
+
+<body>
+
+    <h1><%= title %></h1>
+    <p><em>Preencha os dados para salvar o cliente.</em></p>
+
+    <form action="<%= action %>" method="POST" style="width: 50%;">
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Nome</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="nome" name="nome" value="<%= doc.nome %>" placeholder="Digite o Nome" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Idade</label>
+            <div class="col-md-8">
+                <input type="number" class="form-control" id="idade" name="idade" value="<%= doc.idade %>"  min="1" max="200" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Estado</label>
+            <div class="col-md-8">
+                <select class="form-control" id="uf" name="uf" required>
+                    <option <% if (doc.uf=="AC") { %> selected <% } %> value="AC">Acre</option>
+                    <option <% if (doc.uf=="AL") { %> selected <% } %> value="AL">Alagoas</option>
+                    <option <% if (doc.uf=="AP") { %> selected <% } %> value="AP">Amapá</option>
+                    <option <% if (doc.uf=="AM") { %> selected <% } %> value="AM">Amazonas</option>
+                    <option <% if (doc.uf=="BA") { %> selected <% } %> value="BA">Bahia</option>
+                    <option <% if (doc.uf=="CE") { %> selected <% } %> value="CE">Ceará</option>
+                    <option <% if (doc.uf=="DF") { %> selected <% } %> value="DF">Distrito Federal</option>
+                    <option <% if (doc.uf=="ES") { %> selected <% } %> value="ES">Espírito Santo</option>
+                    <option <% if (doc.uf=="GO") { %> selected <% } %> value="GO">Goiás</option>
+                    <option <% if (doc.uf=="MA") { %> selected <% } %> value="MA">Maranhão</option>
+                    <option <% if (doc.uf=="MT") { %> selected <% } %> value="MT">Mato Grosso</option>
+                    <option <% if (doc.uf=="MS") { %> selected <% } %> value="MS">Mato Grosso do Sul</option>
+                    <option <% if (doc.uf=="MG") { %> selected <% } %> value="MG">Minas Gerais</option>
+                    <option <% if (doc.uf=="PA") { %> selected <% } %> value="PA">Pará</option>
+                    <option <% if (doc.uf=="PB") { %> selected <% } %> value="PB">Paraíba</option>
+                    <option <% if (doc.uf=="PR") { %> selected <% } %> value="PR">Paraná</option>
+                    <option <% if (doc.uf=="PE") { %> selected <% } %> value="PE">Pernambuco</option>
+                    <option <% if (doc.uf=="PI") { %> selected <% } %> value="PI">Piauí</option>
+                    <option <% if (doc.uf=="RJ") { %> selected <% } %> value="RJ">Rio de Janeiro</option>
+                    <option <% if (doc.uf=="RN") { %> selected <% } %> value="RN">Rio Grande do Norte</option>
+                    <option <% if (doc.uf=="RS") { %> selected <% } %> value="RS">Rio Grande do Sul</option>
+                    <option <% if (doc.uf=="RO") { %> selected <% } %> value="RO">Rondônia</option>
+                    <option <% if (doc.uf=="RR") { %> selected <% } %> value="RR">Roraima</option>
+                    <option <% if (doc.uf=="SC") { %> selected <% } %> value="SC">Santa Catarina</option>
+                    <option <% if (doc.uf=="SP") { %> selected <% } %> value="SP">São Paulo</option>
+                    <option <% if (doc.uf=="SE") { %> selected <% } %> value="SE">Sergipe</option>
+                    <option <% if (doc.uf=="TO") { %> selected <% } %> value="TO">Tocantins</option>
+                    <option <% if (doc.uf=="EX") { %> selected <% } %> value="EX">Estrangeiro</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <br>
+        <a href="/listarClientes">Voltar</a>
+
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+</body>
+</html>
